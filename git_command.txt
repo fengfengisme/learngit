@@ -1,0 +1,29 @@
+1. 创建版本库
+    git init;
+2. 分支
+    2.1.创建一个分支
+        repo start <name> --all     // 创建一个分支，名称为name
+        git branch -b <name>        // 创建一个分支，名称为name
+        git branch <name>           // 创建一个分支，名称为name
+    2.2 切换分支
+        repo checkout <name>
+        git checkout <name>
+        git checkout <name>         // 创建并切换到分支name
+    2.3 删除分支
+        git branch -d <name>
+    2.4 查看分支
+        git branch
+        repo branch
+    2.5 合并分支
+        git merge <name>
+3. 创建一个版本
+    git add <name>
+    git commit -m "name"
+    git commit --amend              // 追加
+4. 查看版本记录
+    git log
+5. 切换版本
+    git reset --hard HEAD^          // 撤销commit，跳至上一个版本
+    git reset --hard 版本号          // 根据版本号跳转到指定的版本
+6. 查看当前工作树的状态
+    

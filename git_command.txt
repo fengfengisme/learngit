@@ -22,8 +22,26 @@
     git commit --amend              // 追加
 4. 查看版本记录
     git log
+    git reflog  // 查看本地版本记录
 5. 切换版本
     git reset --hard HEAD^          // 撤销commit，跳至上一个版本
     git reset --hard 版本号          // 根据版本号跳转到指定的版本
 6. 查看当前工作树的状态
+    git status      // 查看变更情况
+7.撤销
+    git checkout -- 文件名     // 撤销当前工作区的修改，如果缓冲区有内容就替换成缓冲区，否则恢复成上一个提交的版本
+    git checkout .            // 撤销当前工作区的修改
+    git reset HEAD 文件名      // 撤销缓冲区的内容放回到工作区(撤销add)
     
+    git reset HEAD^         // 撤销commit，并撤销add，但不删除工作区改动
+    git reset --soft HEAD^  // 撤销commit，并保留add
+    git reset --hard HEAD^  // 撤销commit，并撤销add，并删除工作区改动 （变为上一个版本）
+8.差异
+    git diff        // 比较工作区和缓冲区文件的差异
+    git diff 文件名    // 比较某文件工作区和缓冲区的差异
+9.入栈and出栈
+    git stash       // 入栈
+    git stash pop   // 出栈（同时删除栈空间）
+    git stash apply // 出栈（不删除栈空间）
+    git stash list  // 查看栈空间
+    git stash drop  // 删除栈空间

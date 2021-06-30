@@ -56,6 +56,24 @@ git pull origin dev // 拉取远端dev分支代码，自动合并到本地
 git fetch origin dev // 拉取远端dev分支代码，不会自动合并到本地
 ```
 
+### 拉取远端新分支到本地新分支
+
+```
+git fetch origin branchname:branchname
+// 可以把远程某各分支拉去到本地的branchname下，如果没有branchname，则会在本地新建branchname
+
+git checkout --track origin/remoteName -b localName
+// 获取远程分支remoteName 到本地新分支localName，并跳到localName分支，这里加了--track，让创建的本地分支localName跟中远程的origin/remoteName分支。
+```
+
+### 合并另一个分支上的某一次修改到当前分支
+
+```
+git cherry-pick 版本号
+```
+
+
+
 ## 提交到远端
 
 ```
@@ -103,6 +121,7 @@ git
 
 ```
 git stash       // 入栈
+	git stash save (save message) // 放入stash并增加备注
 git stash pop   // 出栈（同时删除栈空间）
 git stash apply // 出栈（不删除栈空间）
 git stash list  // 查看栈空间
